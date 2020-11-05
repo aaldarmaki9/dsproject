@@ -1,13 +1,25 @@
-# Project: dsproject
+# Create Projects, Import Files, and Load Packages with Dsproject Package
 
-## Author: ahmed
+![ ](ww.png)
 
-## Date: November 05 2020
 
-## Purpose: 
 
-## Data Sources: 
 
-## Stakeholders: 
+The goal of dsproject is to provide a fast and friendly way to create a project, load/attach packages, read data from different types of files in a dataframe.
 
-![ ](BB.png)
+
+ 
+**Install dsproject package**
+```
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+devtools::install_github("aaldarmaki9/dsproject")
+
+```
+![ ](mm.png)
+
+
+
+Date created | November 05 2020

@@ -5,11 +5,10 @@
 #' \code{import} reads in a dataframe from a file.
 #'
 #' @details
-#' This function imports a data frame or matrix from a data file
-#' with the file format based on the file extension, and it also prompt
-#' user to choose a file without the need to provide a filename.
+#' This function imports a data frame from a data file using a filename, or prompt
+#' the user to choose a file without the need to provide a filename.
 #'
-#' @param file a character string naming a file.
+#' @param file a character string of the file.
 #' @param ... Additional arguments passed to the underlying import functions.
 #' For example, this can control column classes for delimited file types,
 #' or control the use of haven for Stata and SPSS or readxl for Excel (.xlsx) format.
@@ -19,9 +18,10 @@
 #' @export
 #' @return return a dataframe.
 #' @author Ahmed Aldarmaki <aaldarmaki@@wesleyan.edu>
-#' @seealso \code{\link{read_sas}}, \code{\link{read_stata}}, \code{\link{read_spss}}, \code{\link{read_excel}}, \code{\link{vroom}}.
+#' @seealso [read_sas](https://www.rdocumentation.org/packages/haven/versions/2.3.1/topics/read_sas), [read_stata](https://www.rdocumentation.org/packages/haven/versions/2.3.1/topics/read_dta), [read_spss](https://www.rdocumentation.org/packages/haven/versions/2.3.1/topics/read_spss), [read_excel](https://www.rdocumentation.org/packages/readxl/versions/1.3.1/topics/read_excel), [vroom](https://www.rdocumentation.org/packages/vroom/versions/1.0.2/topics/vroom).
 #' @examples
 #' \dontrun{df <- import("datasetexample.xlsx")}
+#' \dontrun{df <- import("datasetexample.xlsx", col_names=TRUE)}
 import <- function(file, ...){
 
   # if no file specified, prompt user
@@ -51,5 +51,4 @@ import <- function(file, ...){
   # return data frame
   return(df)
 }
-
 

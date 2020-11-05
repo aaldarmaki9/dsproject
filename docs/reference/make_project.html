@@ -40,8 +40,7 @@
 
 
 <meta property="og:title" content="Make Project — make_project" />
-<meta property="og:description" content="This function will create all of the scaffolding for a new project.
-It will set up all of the relevant directories and their initial contents." />
+<meta property="og:description" content="make_project creates a project." />
 
 
 
@@ -86,11 +85,19 @@ It will set up all of the relevant directories and their initial contents." />
   </a>
 </li>
 <li>
+  <a href="../articles/dsproject.html">Get started</a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/aaldarmaki9/dsproject/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -105,13 +112,12 @@ It will set up all of the relevant directories and their initial contents." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Make Project</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/aaldarmaki9/dsproject/blob/master/R/make_project.R'><code>R/make_project.R</code></a></small>
     <div class="hidden name"><code>make_project.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function will create all of the scaffolding for a new project.
-It will set up all of the relevant directories and their initial contents.</p>
+    <p><code>make_project</code> creates a project.</p>
     </div>
 
     <pre class="usage"><span class='fu'>make_project</span><span class='op'>(</span>
@@ -127,7 +133,7 @@ It will set up all of the relevant directories and their initial contents.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>project</th>
-      <td><p>the name of the project, given as a name or character string.</p></td>
+      <td><p>the name of the project, given as a character string.</p></td>
     </tr>
     <tr>
       <th>path</th>
@@ -139,12 +145,13 @@ It will set up all of the relevant directories and their initial contents.</p>
     </tr>
     <tr>
       <th>readme</th>
-      <td><p>creates a README text file that introduces and explains the project being created.</p></td>
+      <td><p>takes a character string as the name of a text file that it creates that
+introduces and explains the project being created.</p></td>
     </tr>
     <tr>
       <th>git</th>
       <td><p>a boolean value indicating whether to initialise a Git repository
-and add important files to .gitignore.</p></td>
+and add important files to .gitignore or not.</p></td>
     </tr>
     </table>
 
@@ -153,12 +160,12 @@ and add important files to .gitignore.</p></td>
     <p>No value is returned; this function is called for its side effects.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    
-
-
+    <p>This function will create all of the scaffolding for a new project.
+It will set up all of the relevant directories and their initial contents.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># ADD_EXAMPLES_HERE</span>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'>make_project</span><span class='op'>(</span><span class='st'>"project"</span><span class='op'>)</span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'>make_project</span><span class='op'>(</span><span class='st'>"project"</span>, folders <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"figures"</span>, <span class='st'>"documentation"</span>,<span class='st'>"data"</span>, <span class='st'>"reports"</span>, <span class='st'>"R"</span>, <span class='st'>"graphs"</span><span class='op'>)</span>,git <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -1,0 +1,94 @@
+---
+title: "dsproject"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{dsproject}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+**Overview**
+
+The goal of dsproject is to provide a fast and friendly way to create a project, load/attach packages, read data from a file in a dataframe. It is designed to flexibly read many types of data files used, and it is made friendly for users to import a file by prompting the user to choose a file.
+
+**Usage**
+
+Install package with:
+
+```{r, eval=FALSE}
+
+# The easiest way to get dsproject is to install it from the development version from GitHub:
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+devtools::install_github("aaldarmaki9/dsproject")
+
+```
+Load dsproject with:
+
+```{r, eval=FALSE}
+library(dsproject)
+```
+
+**Read a File with import Function**
+
+
+To read a dataset with dsproject you can do it in two ways: using the **import** function that includes the filepath, or run the **import** function and it will prompt you to choose a file. 
+
+Import function supports six file types:
+
+1. Stata dta files.
+2. Spss sav files.
+3. Excel xlsx files.
+4. Excel xls files.
+5. General delimited files.
+
+In many cases, this function will just work: you supply the path to a file or choose a file and you get a dataframe back. The following example loads a sample file with **import** function:
+
+```{r, eval=FALSE}
+mtcars <- import("mtcars.xlsx")
+```
+
+**Create a Project with make_project Function**
+
+
+To create a project with dsproject you can do it by using the **make_project** function by specifying the name of the project as a character string. You don't have to specify a path it will automatically create it in your current working directory, but you also have the option if you want to by setting the path argument.The function will create a README file, and also the needed folders for a project, that can be modified by the folders argument. The function also can initialise a Git repository and add important files to .gitignore, if the git argument was set to TRUE.
+
+The following example creates a project with the **make_project** function:
+
+```{r, eval=FALSE}
+
+#Default: path set at the current working directory and doesn't initialise a Git repository
+make_project("dsproject")
+
+#Specification of arguments path and git:
+
+make_project("dsproject", path = "~/Desktop/project", folders = c("figures", "documentation", "data", "reports", "R"),
+                  readme = "README.md",
+                  git = TRUE)
+
+```
+
+**Load and Attach Packages with use Function**
+
+
+To load and attach a package with dsproject you can do it by using the **use** function. The **use** function provides a fast and user-friendly way, where you don't have to check if you have installed the package.If package is not installed, it asks if you want to install it, and if yes loads/attaches the package for your use. Else, it returns a message that the package is not installed.If the package does not exists, it returns FALSE and gives a warning. It checks and updates the list of currently attached packages and do not reload a namespace which is already loaded.
+
+The following example loads and attach a package with the **use** function:
+
+```{r, eval=FALSE}
+#It can take a name:
+use(dplyr)
+#It can also take a character string:
+use("dplyr")
+```
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+

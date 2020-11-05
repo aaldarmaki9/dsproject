@@ -1,21 +1,24 @@
 #' @title Make Project
 #' @description
+#' \code{make_project} creates a project.
+#'
+#' @details
 #' This function will create all of the scaffolding for a new project.
 #' It will set up all of the relevant directories and their initial contents.
 #'
-#' @details
-#'
-#' @param project the name of the project, given as a name or character string.
+#' @param project the name of the project, given as a character string.
 #' @param path the path of where the project should be created, the default is the current working directory.
 #' @param folders a character vector of the folders created in the project.
-#' @param readme creates a README text file that introduces and explains the project being created.
+#' @param readme takes a character string as the name of a text file that it creates that
+#' introduces and explains the project being created.
 #' @param git a boolean value indicating whether to initialise a Git repository
-#' and add important files to .gitignore.
+#' and add important files to .gitignore or not.
 #' @import usethis
 #' @export
 #' @return No value is returned; this function is called for its side effects.
 #' @examples
-#' # ADD_EXAMPLES_HERE
+#' \dontrun{make_project("project")}
+#' \dontrun{make_project("project", folders = c("figures", "documentation","data", "reports", "R", "graphs"),git = TRUE)}
 make_project <- function (project,
                   path = getwd(),
                   folders = c("figures", "documentation",
